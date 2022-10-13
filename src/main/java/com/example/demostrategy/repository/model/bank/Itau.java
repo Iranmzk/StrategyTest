@@ -1,4 +1,4 @@
-package com.example.demostrategy.repository.model;
+package com.example.demostrategy.repository.model.bank;
 
 import com.example.demostrategy.repository.PaymentStrategy;
 import org.springframework.stereotype.Component;

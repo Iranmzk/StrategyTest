@@ -1,7 +1,6 @@
 package com.example.demostrategy.repository.model.response;
 
-import com.example.demostrategy.repository.model.BankName;
-import com.example.demostrategy.repository.model.Products;
+import com.example.demostrategy.repository.model.bank.BankName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

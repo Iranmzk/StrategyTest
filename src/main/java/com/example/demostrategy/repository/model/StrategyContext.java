@@ -1,6 +1,7 @@
 package com.example.demostrategy.repository.model;
 
 import com.example.demostrategy.repository.PaymentStrategy;
+import com.example.demostrategy.repository.model.bank.BankName;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;

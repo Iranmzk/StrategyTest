@@ -1,6 +1,6 @@
 package com.example.demostrategy.repository;
 
-import com.example.demostrategy.repository.model.BankName;
+import com.example.demostrategy.repository.model.bank.BankName;
 
 public interface PaymentStrategy {
 
