@@ -1,12 +1,11 @@
 package com.example.demostrategy.repository.model.response;
 
+import com.example.demostrategy.repository.model.BankName;
 import com.example.demostrategy.repository.model.Products;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @Data
 @Builder
@@ -14,6 +13,8 @@ import java.util.List;
 @NoArgsConstructor
 public class ShoppingCartResponse {
     private String id;
-    private List<Products> products;
-    private double total;
+    private String costumer;
+    private String products;
+    private BankName bankName;
+    private Double value;
 }

@@ -5,8 +5,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Bradesco implements PaymentStrategy {
-//    private String number;
-//    private String ccv;
 
     @Override
     public Double pay(Double amount) {

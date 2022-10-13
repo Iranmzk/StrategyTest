@@ -3,31 +3,28 @@ package com.example.demostrategy.services;
 import com.example.demostrategy.repository.ShoppingCartRepository;
 import com.example.demostrategy.repository.model.request.ShoppingCartRequest;
 import com.example.demostrategy.repository.model.response.ShoppingCartResponse;
-import com.example.demostrategy.repository.model.StrategyFactory;
+import com.example.demostrategy.repository.model.StrategyContext;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
 public class ShoppingCartService {
 
     private final ShoppingCartRepository repository;
-
-    private final StrategyFactory strategyFactory;
+    private final StrategyContext strategyContext;
 
     public ShoppingCartResponse saveSc(ShoppingCartRequest request) {
-        return ShoppingCartMapper.mapFromResponse(repository.save(ShoppingCartMapper.mapToEntity(request)));
+        var context = strategyContext.paidTest(ShoppingCartMapper.RequestToEntity(request));
+        var repo = repository.save(context);
+        return ShoppingCartMapper.entityToResponse(repo);
     }
 
-    public ShoppingCartResponse findById(String id) {
+    public ShoppingCartResponse find(String id) {
         return repository.findById(id)
-                .map(ShoppingCartMapper::mapFromResponse)
-                .orElseThrow(() -> new RuntimeException("Not found"));
-    }
-
-    public ShoppingCartResponse test(ShoppingCartRequest request) {
-        var variavel = strategyFactory.paidTest(ShoppingCartMapper.mapToEntity(request));
-
-        return ShoppingCartMapper.mapFromResponse(variavel);
+                .map(ShoppingCartMapper::entityToResponse)
+                .orElseThrow(() -> new RuntimeException("not found"));
     }
 }

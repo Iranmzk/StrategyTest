@@ -5,13 +5,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Santander implements PaymentStrategy {
-//    private String number;
-//    private String ccv;
 
     @Override
     public Double pay(Double amount) {
         return 1.30 * amount;
     }
+
     @Override
     public BankName getBankName() {
         return BankName.SANTANDER;

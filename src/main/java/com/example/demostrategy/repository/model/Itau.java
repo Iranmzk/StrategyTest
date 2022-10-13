@@ -5,8 +5,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Itau implements PaymentStrategy {
-//    private String number;
-//    private String ccv;
 
     @Override
     public BankName getBankName() {

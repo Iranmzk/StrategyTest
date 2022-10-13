@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/shopping")
 @AllArgsConstructor
-public class ControllerTest {
+public class ShoppingCartController {
     private ShoppingCartService shoppingCartService;
 
-    @PostMapping("/create")
+    @PostMapping("/cart")
     public ShoppingCartResponse save(@RequestBody ShoppingCartRequest request) {
         return shoppingCartService.saveSc(request);
     }
 
     @GetMapping("/find")
-    public ShoppingCartResponse find(@RequestBody ShoppingCartRequest request) {
-        return shoppingCartService.test(request);
+    public ShoppingCartResponse find(@RequestParam String id) {
+        return shoppingCartService.find(id);
     }
 }

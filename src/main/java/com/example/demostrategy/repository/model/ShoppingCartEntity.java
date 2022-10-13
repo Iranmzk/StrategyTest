@@ -17,8 +17,8 @@ public class ShoppingCartEntity {
     @Id
     private String id;
     private String costumer;
-    private List<Products> productsList;
+    private String products;
     private BankName bankName;
-    private Double total;
+    private Double value;
 
 }

@@ -8,11 +8,11 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface ShoppingCartMapper {
-    static ShoppingCartResponse mapFromResponse(ShoppingCartEntity entity) {
+    static ShoppingCartResponse entityToResponse(ShoppingCartEntity entity) {
         return Mappers.getMapper(ShoppingCartMapper.class).mapToResponse(entity);
     }
 
-    static ShoppingCartEntity mapToEntity(ShoppingCartRequest request) {
+    static ShoppingCartEntity RequestToEntity(ShoppingCartRequest request) {
         return Mappers.getMapper(ShoppingCartMapper.class).mapEntityToRequest(request);
     }
 
